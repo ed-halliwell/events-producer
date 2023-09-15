@@ -1,0 +1,12 @@
+# This is principally configured for the main BE service,
+# however this should be generic enough to be reused for other images if they are added in the future.
+#
+**/scripts
+**/k8s
+**/node_modules
+**/.md
+**/.env
+**/.env.*
+
+# Ignore CI
+.github

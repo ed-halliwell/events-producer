@@ -1,0 +1,22 @@
+version: '3.9'
+
+networks:
+  events:
+    name: events
+
+services:
+  producer:
+    container_name: events-producer
+    image: event-producer
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    networks:
+      - events
+    ports:
+    - '4000:4000'
+    environment:
+      NODE_ENV: production
+      PORT: '4000'
+      QUEUE_URL: amqps://yttbbsxm:uWrk6gowG999I6WsxPzlZlnCy5pac8TR@kangaroo.rmq.cloudamqp.com/yttbbsxm
+      QUEUE_NAME: eventdriven
