@@ -1,7 +1,7 @@
 {
   "name": "producer",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "build/index.js",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
