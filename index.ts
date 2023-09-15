@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import * as dotenv from "dotenv";
-import { MessageQueue } from "./message-queue";
-import { getHome } from "./controllers/home";
+import { MessageQueue } from "./src/message-queue";
+import { getHome } from "./src/controllers/home";
 
 dotenv.config();
 
