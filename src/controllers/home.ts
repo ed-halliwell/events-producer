@@ -1,7 +1,6 @@
 import type { Request, Response } from "express";
 
 export const getHome = async (_: Request, res: Response) => {
-  console.log("HOME PAGE LOADING");
   return res.send(`
     <!DOCTYPE html>
     <html>

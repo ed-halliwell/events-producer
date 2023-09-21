@@ -1,6 +1,6 @@
 import amqplib, { Channel } from "amqplib";
 
-export class MessageQueue {
+export class RabbitMessageQueue {
   private queueName: string;
 
   private queueUrl: string;
@@ -23,7 +23,7 @@ export class MessageQueue {
     this.queue = channel;
   }
 
-  sendMessage(msg: string) {
-    this.queue.sendToQueue(this.queueName, Buffer.from(msg));
+  async sendMessage(msg: string): Promise<void> {
+    await this.queue.sendToQueue(this.queueName, Buffer.from(msg));
   }
 }
