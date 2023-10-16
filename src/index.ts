@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // RABBIT MQ
-export const messageQueue = new RabbitMessageQueue(queueName, queueUrl);
+const messageQueue = new RabbitMessageQueue(queueName, queueUrl);
 
 async function connectToRabbitQueue() {
   await messageQueue.connect();
@@ -26,7 +26,7 @@ async function connectToRabbitQueue() {
 connectToRabbitQueue();
 
 // KAFKA
-export const kafka = new KafkaProducer(kafkaClientId, kafkaTopicName);
+const kafka = new KafkaProducer(kafkaClientId, kafkaTopicName);
 
 async function connectToKafka() {
   await kafka.connect();

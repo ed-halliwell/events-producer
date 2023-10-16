@@ -15,7 +15,6 @@ export class KafkaProducer {
 
   async connect(): Promise<void> {
     try {
-      console.log("Connecting to kafka producer...");
       await this.producer.connect();
     } catch (error) {
       console.log("Error connecting the producer: ", error);

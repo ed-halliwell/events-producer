@@ -12,7 +12,7 @@ export const getHome = async (_: Request, res: Response) => {
           <form action="/" method="post" id="form1">
              <label for="message">Message:</label>
              <input type="text" id="message" name="message">
-             <input type="submit" value="Ok" />
+             <input type="submit" value="OK" />
           </form>
        </body>
     </html>
