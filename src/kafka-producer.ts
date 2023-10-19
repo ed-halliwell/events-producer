@@ -1,6 +1,6 @@
 import { Kafka, Partitioners, Producer } from "kafkajs";
 
-export class KafkaProducer {
+export class MyKafkaProducer {
   private clientId: string;
 
   private topicName: string;

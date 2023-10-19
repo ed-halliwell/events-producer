@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express";
 import * as dotenv from "dotenv";
-import { RabbitMessageQueue } from "./rabbit-message-queue";
+import { MyRabbitMqProducer } from "./rabbit-message-queue";
 import { getHome } from "./controllers/home";
-import { KafkaProducer } from "./kafka-producer";
+import { MyKafkaProducer } from "./kafka-producer";
 
 dotenv.config();
 
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // RABBIT MQ
-const messageQueue = new RabbitMessageQueue(queueName, queueUrl);
+const messageQueue = new MyRabbitMqProducer(queueName, queueUrl);
 
 async function connectToRabbitQueue() {
   await messageQueue.connect();
@@ -26,7 +26,7 @@ async function connectToRabbitQueue() {
 connectToRabbitQueue();
 
 // KAFKA
-const kafka = new KafkaProducer(kafkaClientId, kafkaTopicName);
+const kafka = new MyKafkaProducer(kafkaClientId, kafkaTopicName);
 
 async function connectToKafka() {
   await kafka.connect();

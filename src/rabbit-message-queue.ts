@@ -1,6 +1,6 @@
 import amqplib, { Channel } from "amqplib";
 
-export class RabbitMessageQueue {
+export class MyRabbitMqProducer {
   private queueName: string;
 
   private queueUrl: string;
